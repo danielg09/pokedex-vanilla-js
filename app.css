@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 10px;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2.5rem;
+}
+
+/* form */
+.form-search-pokemon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+.pokemkon-input{
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    padding: .8rem;  
+    width: 30%; 
+    min-width: 250px;
+}
+
+.btn-search{
+    padding: .8rem;
+    background: #ff0066;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+/* modal */
+.modal{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    border-radius: 5px;
+    padding: 2rem;
+    border: solid black 1px;
+}
+
+.times{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: black;
+    font-size: 25px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+/* card container */
+.pokemons-container{
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Card */
+.card{
+    width: 150px;
+    height: 25vh;
+    text-align: center;
+    border-radius: 5px;
+    border: solid 1px black;
+    background-color: rgb(102, 102, 102);
+}
+
+.card-img-container{
+    background: url('blob.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.body-card-container{
+    color: white;
+}
+
+.card-pokemon-name{
+    font-size: 1.5rem;
+}
+
+.card-pokemon-id{
+    font-size: 1.2rem;
+}
+
+/* Paginacion */
+.pagination-list{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.btn-pagination{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    padding:.8rem 1.2rem;
+    background-color: white;
+    transition: all ease .8s;
+}
+
+
+.btn-pagination:hover{
+    background: black;
+    color: white;
+}
+
+.spinner{
+    display: none;
+    border: 4px solid rgba(0, 0, 0, .1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
